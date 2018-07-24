@@ -15,12 +15,14 @@
                 .then(content => {
                     country = content[Math.floor(Math.random() * 250)].name;
                     fetch(`https://restcountries.eu/rest/v2/name/${country}`).then(res => { return res.json(); })
-                        .then(content => {var obj=(content[0]);
-                            document.getElementById('myCountry').innerHTML += `<h1>${JSON.stringify(content[0].name).substring(1,JSON.stringify(content[0].name).length-1)}</h1>
+                        .then(content => {
+                            var obj = (content[0]);
+                            document.getElementById('myCountry').innerHTML += `<h1>${JSON.stringify(content[0].name).substring(1, JSON.stringify(content[0].name).length - 1)}</h1>
                     <p>${JSON.stringify(content)}</P><ul>
                        `;
-                    for(i in obj) document.getElementById('myCountry').innerHTML +=`<li>${JSON.stringify(i)}</li>`;
-                    document.getElementById('myCountry').innerHTML +=`</ul>`});
+                            for (i in obj) document.getElementById('myCountry').innerHTML += `<li>${JSON.stringify(i)}</li>`;
+                            document.getElementById('myCountry').innerHTML += `</ul>`
+                        });
                 });
 
         }
