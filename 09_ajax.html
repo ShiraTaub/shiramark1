@@ -20,7 +20,7 @@
                             document.getElementById('myCountry').innerHTML += `<h1>${JSON.stringify(content[0].name).substring(1, JSON.stringify(content[0].name).length - 1)}</h1>
                     <p>${JSON.stringify(content)}</P><ul>
                        `;
-                            for (i in obj) document.getElementById('myCountry').innerHTML += `<li>${JSON.stringify(i)}</li>`;
+                            for (i in obj) document.getElementById('myCountry').innerHTML += `<li>${JSON.stringify(i)} ${JSON.stringify(obj[0][i])}</li>`;
                             document.getElementById('myCountry').innerHTML += `</ul>`
                         });
                 });
